@@ -5,10 +5,6 @@
     --secondary-color: #031927;
 }
 
-html {
-    scroll-behavior: smooth;
-  }
-
 body {
     background: #f5f0f0;
     margin: 0;
@@ -173,11 +169,11 @@ ul > a {
 }
 
 .boxes{
-    display: flex; 
-    background: #191c24; 
-    border-radius: 8px; 
+    display: flex;
+    background: #191c24;
+    border-radius: 8px;
 }
-  
+
 .box {
     flex: 1;
     padding: 40px 40px;
@@ -203,12 +199,29 @@ ul > a {
 
 .card-container {
     width: 1500px;
-    margin: 0 auto;      
+    margin: 0 auto;
 }
 
 .cards {
     padding-top: 0;
     background-color: #d8d6d6;
+}
+
+.menu{
+    text-align: center;
+}
+
+.menuBtn{
+    align-items: center;
+    border: 1px solid black;
+    margin: 10px auto;
+    width: 56vw;
+}
+.BtnImg{
+    height: 10vw;
+    width: 54vw;
+    object-fit: cover;
+    object-position: 0 50%;
 }
 
 /* Downloads section */
@@ -223,16 +236,12 @@ ul > a {
 
 .works-container {
     display: flex;
-    padding: 7em 10%;
     background-color: #d8d6d6;
-    justify-content: space-between;
     text-align: left;
-    
-     display: flex;
     grid-template-columns: 180px auto;
     justify-content: unset;
     padding: 7em 10%;
-    margin: 0 auto; 
+    margin: 0 auto;
 }
 
 .ios-android {
@@ -249,7 +258,7 @@ ul > a {
 .yt-template {
     width: 50%;
     padding-left: 22em;
-    
+
 }
 
 
@@ -264,26 +273,101 @@ header {
     margin-right: auto;
 }
 
+/* Game Menu */
+
+.menu {
+    text-align: center;
+}
+
+.menuBtn {
+    align-items: center;
+    border: 1px solid black;
+    margin: 10px auto;
+    width: 56vw;
+}
+
+.BtnImg {
+    height: 10vw;
+    width: 54vw;
+    object-fit: cover;
+}
+
+/* Back to top button */
+#back-to-top-btn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 26px;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    color: var(--secondary-color);
+    cursor: pointer;
+    outline: none;
+    border: 3px solid var(--secondary-color);
+    border-radius: 5px;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-property: background-color, color;
+}
+  
+/* Animations */
+.btnEntrance {
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-name: btnEntrance;
+}
+ 
+/* fadeIn */
+@keyframes btnEntrance {
+from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+}
+to {
+     opacity: 1;
+    transform: translate3d(0, 0, 0);
+    }
+}
+  
+.btnExit {
+    animation-duration: 0.25s;
+    animation-fill-mode: both;  
+    animation-name: btnExit;
+}
+
+/* fadeOut */
+@keyframes btnExit {
+from {
+    opacity: 1;
+}
+to {
+     opacity: 0;
+    transform: translate3d(0, 100%, 0);
+    }
+}
+
 /* -------------- Responsive HERO ------------*/
 
 
 /* Responsiveness */
 @media only screen and (max-width: 1320px) {
-    
-.left-col h1{
-    margin-right: 1em;
-}
 
-.left-col p{
-    margin-right: 2em 0;
-}
+    .left-col h1{
+        margin-right: 1em;
+    }
 
-.hero-img {
-    display: none;
-}
-.yt-template {
-    display: none;
-}
+    .left-col p{
+        margin-right: 2em;
+    }
+
+    .hero-img {
+        display: none;
+    }
+    .yt-template {
+        display: none;
+    }
 }
 
 
@@ -330,17 +414,17 @@ header {
 }
 
 @media only screen and (max-width: 600px) {
-    
+
     .left-col h1 {
         font-size: 35px;
-        margin-right: 0em;
+        margin-right: 0;
     }
-    
+
     .left-col p{
         font-size: 18px;
-        margin-right: 2em 0;
+        margin-right: 2em;
     }
-    
+
     .hero-img {
         display: none;
     }
@@ -362,17 +446,8 @@ header {
     h2 {
         width: 15em;
     }
+    #back-to-top-btn {
+        bottom: 20px;
+        right: 100px;
     }
-
-/* @media only screen and (max-width: 720px) {
-    .left-col{
-        display: block;
-    }
-} */
-
-
-
-
-
-
-
+}
